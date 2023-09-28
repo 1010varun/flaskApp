@@ -3,11 +3,11 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/app/getLLM', methods=['GET'])
+@app.route('/app/getDB', methods=['GET'])
 def getLLM() :
     if(request.method  == 'GET'):
-        LLM = requests.get("http://localhost:5001/LLM")
-        with open("localLLM.py", "w") as file:
+        LLM = requests.get("http://localhost:5001/DB")
+        with open("localDB.db", "w") as file:
             file.write(LLM.text)
         return "File received successfully!"
     else:
@@ -27,5 +27,3 @@ def getPlayBook():
     
 if __name__ == "__main__":
     app.run(debug=True)
-
-

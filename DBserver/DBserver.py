@@ -3,10 +3,10 @@ from flask import Flask, request, send_file
 
 app = Flask(__name__)
 
-@app.route('/LLM', methods=['GET'])
+@app.route('/DB', methods=['GET'])
 def LLM() :
     if(request.method  == 'GET'):
-        return send_file('./LLM.py', as_attachment=True)
+        return send_file('./sample.db', as_attachment=True)
     else:
         return "this should be a get request"
 
